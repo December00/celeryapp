@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block titlet%}Пост{% endblock %}
+
+{% block bodycontent %}
+    <div class="blog-detail">
+        <h1>{{ blog.title }}</h1>
+            <p><strong>Дата:</strong> {{ blog.date }}</p>
+        <p>{{ blog.content }}</p>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+            <span> {{blog.likes}}</span>
+        </svg>
+
+
+    </div>
+    <div class="comments">
+
+    </div>
+{% endblock %}

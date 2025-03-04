@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block titlet%}Все посты{% endblock %}
+
+{% block bodycontent%}
+    {% for el in post %}
+        <a href="{% url 'current_blog' el.id %}">
+            <div class="box">
+                <h3>{{ el.title }}</h3>
+                    <span>{{ el.date }}</span>
+                <p>{{ el.content }}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                </svg> {{ el.likes }}
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}
